@@ -2,4 +2,4 @@
 
 Evaldas Tamutis PI18B
 
-Ruby on rails 1 task
+Ruby on rails 2 task
