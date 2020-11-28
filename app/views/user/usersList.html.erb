@@ -1,0 +1,49 @@
+<div class="row">
+        <div class="col-md-6 offset-md-3"
+            style="background-color: #fff; margin-top: 25px;padding:20px; font-family: 'Poppins', sans-serif;">
+          
+            
+
+            <%= form_tag(usersList_path, :method => "get",   
+            class: 'navbar-form navbar-left') do %>  
+            <div class="input-group">  
+            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+            <div class="input-group-btn">  
+            <%= button_tag "SEARCH", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+            </div>  
+            </div>  
+           <% end %>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>vardas</th>
+                        <th>Pavarde</th>
+                        <th>Pastas</th>
+                        <th>Telefonas</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @users.each do |user| %>
+                <%= form_with url: deleteupdate_path, local: true, method: :post do %>
+                <tr>
+
+                <td><%= user.vardas %> </td>
+                <td><%= user.pavarde %> </td>
+                <td><%= user.pastas %> </td>
+                <td><%= user.telefonas %> </td>
+                <%= hidden_field_tag "id", user.id %>
+                <td><button type="submit" name="delete_btn" class="btn btn-danger" >DELETE</button></td>
+                <% end %>
+                <%= form_with url: edit_path, local: true, method: :get do %>
+                <%= hidden_field_tag "id", user.id %>
+                <td><button type="submit" name="edit_btn" class="btn btn-primary" >EDIT</button></td>
+                <% end %>
+                
+                   <% end %> 
+                </tbody>
+            </table>
+
+        </div>
+    </div>

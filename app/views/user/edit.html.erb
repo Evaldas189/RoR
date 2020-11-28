@@ -1,0 +1,26 @@
+<h1 style="margin-left: 70px;">Modifikuoti naudotoją</h1>
+
+<form action = "/update" method = "POST">
+                <div class="input-box">
+                <input type="hidden" name="user[id]" id="id" value="<%= @user.id%>">
+                  <div>
+                  <label>Vardas</label>
+                  <input type="text" name="user[vardas]" value="<%= @user.vardas%>">
+                  </div>
+                  <div>
+                  <label>Pavardė</label>
+                  <input type="text" name="user[pavarde]" value="<%= @user.pavarde%>">
+                  </div>
+                  <div>
+                  <label>El.Paštas</label>
+                  <input type="text" name="user[pastas]" value="<%= @user.pastas%>">
+                  </div>
+                  <div>
+                  <label>Telefonas</label>
+                  <input type="text" name="user[telefonas]" value="<%= @user.telefonas%>">
+                  </div>
+                </div>
+                <div class="registracijos-box">
+                  <input type="submit" value="Modifikuoti" name="submit" class="btn btn-primary">
+              </div>
+             </form>

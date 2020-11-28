@@ -12,4 +12,14 @@ Rails.application.routes.draw do
   #GET metodas noritn pasiekti 'try' puslapį.
   get 'try' => 'pages#try'
 
+  post '/users' => 'user#create'
+
+  get '/list' => 'user#usersList', as: 'usersList'
+
+  post 'deleteupdate', acton: :deleteupdate, controller: :user
+
+  get 'edit' => 'user#edit'
+
+  post '/update' => 'user#update'
+
 end
