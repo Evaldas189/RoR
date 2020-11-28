@@ -26,7 +26,7 @@
                 </thead>
                 <tbody>
                 <% @users.each do |user| %>
-                <%= form_with url: deleteupdate_path, local: true, method: :post do %>
+                <%= form_with url: delete_path, local: true, method: :post do %>
                 <tr>
 
                 <td><%= user.vardas %> </td>

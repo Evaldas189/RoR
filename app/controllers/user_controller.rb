@@ -29,7 +29,7 @@ class UserController < ApplicationController
       end
     end
 
-    def deleteupdate
+    def delete
       if params[:delete_btn]
         User.where(id: params[:id]).destroy
       end

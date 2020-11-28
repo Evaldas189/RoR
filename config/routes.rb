@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/list' => 'user#usersList', as: 'usersList'
 
-  post 'deleteupdate', acton: :deleteupdate, controller: :user
+  post 'delete', acton: :delete, controller: :user
 
   get 'edit' => 'user#edit'
 
