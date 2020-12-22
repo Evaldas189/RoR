@@ -1,0 +1,63 @@
+
+<div style="height:700px; display:flex; align-items:center; justify-content:center;background-color: wheat;">
+<div class="row justify-content-center">
+
+<%= form_tag session_path do %>
+<div class="row mb-4">
+<h1> Prisijungimas </h1>
+</div>
+<div class="row">
+<%= text_field_tag :pastas, nil, placeholder: 'El.paštas' %>
+</div>
+<div class="row mt-4 mb-4">
+<%= password_field_tag :password_digest, nil, placeholder: 'Slaptažodis' %>
+</div>
+<div class="row mt-4">
+<%= submit_tag 'Prisijungti' %>
+</div>
+<div class="row mt-4">
+   Neturi paskyros? <%= link_to "Registruokis", new_path %>
+</div>
+<div class="pl-4 pr-4 pt-4">
+                  <% flash.each do |name, msg| %>
+                  <div class="alert alert-<%= name %>" role="alert">
+                      <%= msg %>
+                  </div>
+                  <% end %>
+              </div>
+<% end %>
+</div>
+</div>
+<footer class="index-footer">
+      <div>
+        <h3>Apie mus</h3>
+        <p>SportMax – Šiuolaikiškas sporto klubas Vilniuje, kuriame rasite viską,
+           ko reikia Jūsų sveikatai, grožiui ir gerai savijautai palaikyti. Erdvi
+           treniruoklių salė, motyvuojančios grupinės treniruotės, moderni vandens zona.</p>
+      </div>
+      <div>
+        <h3>Paslaugos</h3>
+        <ul>
+          <li>Grupiniai užsiėmimai</li>
+          <li>Treniruoklių salė</li>
+          <li>Plaukimo baseinas</li>
+          <li>Spa zona</li>
+          <li>Asmeninis treneris</li>
+          <li>Plaukimo pamokos</li>
+          <li>Masažas</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontaktai</h3>
+        <p>Tel Nr : +37067608081<br>
+          El Paštas : Sportmax@gmail.com</p>
+
+          <p>Adresas: Ukmergės g. 578,<br>
+          Vilnius 12111, Lietuva</p>
+
+          <p>Darbo Laikas<br>
+          I-V 6.30-22.00<br>
+          VI-VII 9.00-20.00</p>
+      </div>
+      
+    </footer>

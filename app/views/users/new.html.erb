@@ -1,0 +1,70 @@
+<div style="display: flex; flex-direction: column; height:750px; justify-content:center; background-color: wheat;">
+                <h2 style="margin-right: 30px" id="registration-title">registracija   
+              </h2>
+              <form style="display: flex; flex-direction: column; justify-content:center; align-items:center; " action = "/newUser" method = "POST">
+                <div style="display: flex; flex-direction: column; flex-wrap:nowrap; height:320px;" class="input-box">
+                  <div>
+                  <input type="hidden" name="user[rights]" value="user">
+                  <label>Vardas</label>
+                  <input type="text" name="user[vardas]" placeholder="Vardas">
+                  </div>
+                  <div>
+                  <label>El.Paštas</label>
+                  <input type="text" name="user[pastas]" placeholder="El.Paštas">
+                  </div>
+                  <div>
+                  <label>Slaptažodis</label>
+                  <input type="text" name="user[password_digest]" placeholder="slaptazodis">
+                  </div>
+                </div>
+                <div style="margin:0;" class="registracijos-box">
+                  <input type="submit" value="Registruotis" name="submit" class="btn btn-secondary">
+              </div>
+              <div style="margin-top:20px;">
+              Jau turi paskyrą?
+              <%= link_to "Prisijungimas", login_path %>
+              </div>
+              <div class="pl-4 pr-4 pt-4">
+                  <% flash.each do |name, msg| %>
+                  <div class="alert alert-<%= name %>" role="alert">
+                      <%= msg %>
+                  </div>
+                  <% end %>
+              </div>
+             </form>
+              
+              
+              </div>
+              <footer class="index-footer">
+      <div>
+        <h3>Apie mus</h3>
+        <p>SportMax – Šiuolaikiškas sporto klubas Vilniuje, kuriame rasite viską,
+           ko reikia Jūsų sveikatai, grožiui ir gerai savijautai palaikyti. Erdvi
+           treniruoklių salė, motyvuojančios grupinės treniruotės, moderni vandens zona.</p>
+      </div>
+      <div>
+        <h3>Paslaugos</h3>
+        <ul>
+          <li>Grupiniai užsiėmimai</li>
+          <li>Treniruoklių salė</li>
+          <li>Plaukimo baseinas</li>
+          <li>Spa zona</li>
+          <li>Asmeninis treneris</li>
+          <li>Plaukimo pamokos</li>
+          <li>Masažas</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontaktai</h3>
+        <p>Tel Nr : +37067608081<br>
+          El Paštas : Sportmax@gmail.com</p>
+
+          <p>Adresas: Ukmergės g. 578,<br>
+          Vilnius 12111, Lietuva</p>
+
+          <p>Darbo Laikas<br>
+          I-V 6.30-22.00<br>
+          VI-VII 9.00-20.00</p>
+      </div>
+      
+    </footer>

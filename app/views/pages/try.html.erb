@@ -6,27 +6,35 @@
                 <h2 id="registration-title">
                   registruokis nemokamam<br> pabandymui    
               </h2>
-              <form action = "/users" method = "POST">
+              <form action = "/free_try_users" method = "POST">
                 <div class="input-box">
+                 <input type="hidden" name="user[user_id]" value="<%=@useris.id%>">
                   <div>
                   <label>Vardas</label>
-                  <input type="text" name="user[vardas]" placeholder="Vardas">
+                  <input type="text" name="user[vardas]" id="vardas" placeholder="Vardas">
                   </div>
                   <div>
                   <label>Pavardė</label>
-                  <input type="text" name="user[pavarde]" placeholder="Pavarde">
+                  <input type="text" name="user[pavarde]" id="pavarde" placeholder="Pavarde">
                   </div>
                   <div>
                   <label>El.Paštas</label>
-                  <input type="text" name="user[pastas]" placeholder="El.Paštas">
+                  <input type="text" name="user[pastas]" id="pastas" placeholder="El.Paštas">
                   </div>
                   <div>
                   <label>Telefonas</label>
-                  <input type="text" name="user[telefonas]" placeholder="Telefonas">
+                  <input type="text" name="user[telefonas]" id="telefonas" placeholder="Telefonas">
                   </div>
                 </div>
-                <div class="registracijos-box">
+                <div class="registracijos-box ml-4">
                   <input type="submit" value="Registruotis" name="submit" class="btn btn-secondary">
+              </div>
+               <div class="pl-4 pr-4 pt-4">
+                  <% flash.each do |name, msg| %>
+                  <div class="alert alert-<%= name %>" role="alert">
+                      <%= msg %>
+                  </div>
+                  <% end %>
               </div>
              </form>
               

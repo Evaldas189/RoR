@@ -53,12 +53,16 @@
              <td><img src="https://www.lemongym.lt/Theme/cpartner/assets/img/cart_tick.png" alt=""></td>
              <td>3 €/MĖNESĮ</td>
            </tr>
+           <% if current_user%>
+           <% if !current_user_admin%>
            <tr>
              <td class="first-th"></td>
              <td><button id="first-button" class="isigyti-btn">ĮSIGYTI</button> </td>
              <td><button class="isigyti-btn">ĮSIGYTI</button></td>
              <td><button class="isigyti-btn">ĮSIGYTI</button></td>
            </tr>
+           <%end%>
+           <%end%>
            
          </table>
         </div>
